@@ -21,7 +21,7 @@ function fish_prompt
     set -l cwd $yellow(prompt_pwd)
 
     set -l user_prompt ""
-    if test "$USER" != "$CURRENT_USER"
+    if test "$USER" != "$DEFAULT_USER"
         set user_prompt "$green$USER$normal$separator"
     end
 
