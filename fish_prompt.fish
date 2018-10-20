@@ -19,17 +19,17 @@ else
 end
 
 function fish_prompt
-  set -l prompt ""
+  set prompt ""
 
   if test $USER != $CURRENT_USER
-      set prompt "$prompt$green$USER$normal$separator"
+      set user_prompt "$prompt$green$USER$normal$separator"
   end
 
   if test -z $SSH_CLIENT
       set prompt "$prompt$cyan$hostname$normal$separator"
   end
 
-  set "$prompt$yellow$cwd$normal$arrow$normal "
+  set prompt "$user_prompt$host_prompt$yellow$cwd$normal$arrow$normal "
 
   echo -n $prompt
 end
