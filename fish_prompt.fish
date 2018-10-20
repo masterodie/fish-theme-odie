@@ -25,7 +25,7 @@ function fish_prompt
       set -l prompt "$green$USER$normal$separator"
   end
 
-  if [ -z $SSH_CLIENT ]
+  if test $SSH_CLIENT
       set -l prompt "$prompt$cyan$hostname$normal$separator"
   end
 
