@@ -29,7 +29,7 @@ function fish_prompt
       set prompt "$prompt$cyan$hostname$normal$separator"
   end
 
-  set prompt "$user_prompt$host_prompt$yellow$cwd$normal$arrow$normal "
+  set prompt "$prompt$yellow$cwd$normal$arrow$normal "
 
   echo -n $prompt
 end
