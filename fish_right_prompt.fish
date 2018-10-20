@@ -1,3 +1,5 @@
+function fish_mode_prompt; end
+
 function _git_branch_name
   echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
 end
@@ -30,4 +32,21 @@ function fish_right_prompt
   end
 
   echo -n "$git_info$normal"
+
+# Do nothing if not in vi mode
+  if set -q __fish_vi_mode
+  switch $fish_bind_mode
+  case default
+  set_color --bold --background red white
+  echo '[N]'
+  case insert
+  set_color --bold --background green white
+  echo '[I]'
+  case visual
+  set_color --bold --background magenta white
+  echo '[V]'
+  end
+  set_color normal
+  echo -n ' '
+  end
 end
