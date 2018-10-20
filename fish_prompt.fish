@@ -21,7 +21,7 @@ function fish_prompt
     end
 
     set -l user_prompt ""
-    if test "$USER" != "$DEFAULT_USER" or test $USER = "root"
+    if test "$USER" != "$DEFAULT_USER"; or test $USER = "root"
         if test "$USER" = "root"
             set color $red
         else
