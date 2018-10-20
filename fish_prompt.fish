@@ -21,11 +21,11 @@ end
 function fish_prompt
   set prompt ""
 
-  if test $USER != $CURRENT_USER
+  if test "$USER" != "$CURRENT_USER"
       set user_prompt "$prompt$green$USER$normal$separator"
   end
 
-  if test -z $SSH_CLIENT
+  if test -z "$SSH_CLIENT"
       set prompt "$prompt$cyan$hostname$normal$separator"
   end
 
