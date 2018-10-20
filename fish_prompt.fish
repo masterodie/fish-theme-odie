@@ -22,14 +22,14 @@ function fish_prompt
   set -l prompt ""
 
   if [ $USER -ne $CURRENT_USER ]
-      set -l prompt "$prompt$green$USER$normal$separator"
+      set prompt "$prompt$green$USER$normal$separator"
   end
 
   if test $SSH_CLIENT
-      set -l prompt "$prompt$cyan$hostname$normal$separator"
+      set prompt "$prompt$cyan$hostname$normal$separator"
   end
 
-  set -l "$prompt$yellow$cwd$normal$arrow$normal "
+  set "$prompt$yellow$cwd$normal$arrow$normal "
 
   echo -n $prompt
 end
