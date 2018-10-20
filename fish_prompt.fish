@@ -27,7 +27,7 @@ function fish_prompt
         else
             set color $green
         end
-        set user_prompt "$green$USER$normal$separator"
+        set user_prompt "$color$USER$normal$separator"
     end
 
     set -l host_prompt ""
