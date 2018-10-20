@@ -21,18 +21,16 @@ function fish_prompt
     set -l cwd $yellow(prompt_pwd)
 
     if test "$USER" != "$CURRENT_USER"
-    set -l user_prompt "$green$USER$normal$separator"
+        set -l user_prompt "$green$USER$normal$separator"
     end
 
     if test "$SSH_CLIENT" != ""
-    set -l host_prompt "$cyan$hostname$normal$separator"
+        set -l host_prompt "$cyan$hostname$normal$separator"
     end
 
     set -l cwd_prompt "$cwd$normal"
 
-    set -l prompt "$user_prompt$host_prompt$cwd_prompt$arrow$normal "
-
-    echo -n $prompt
+    echo -n -e "$user_prompt$host_prompt$cwd_prompt$arrow$normal "
 end
 
 
