@@ -2,9 +2,9 @@
 
 function fish_prompt
 
+    set -l last_status $status
     set -l hostname (hostname | string replace -r '\..*' '')
     set -l separator '::'
-    set -l last_status $status
     set -l cyan (set_color -o cyan)
     set -l yellow (set_color -o yellow)
     set -l red (set_color -o red)
