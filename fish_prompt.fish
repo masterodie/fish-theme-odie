@@ -1,11 +1,5 @@
 # name: odie
 
-if test $last_status = 0
-  set arrow " $green▸"
-else
-  set arrow " $red▸"
-end
-
 function fish_prompt
 
     set -l hostname (hostname | string replace -r '\..*' '')
@@ -19,6 +13,12 @@ function fish_prompt
     set -l magenta (set_color -o magenta)
     set -l normal (set_color normal)
     set -l cwd $yellow(prompt_pwd)
+
+    if test $last_status = 0
+      set arrow " $green▸"
+    else
+      set arrow " $red▸"
+    end
 
     set -l user_prompt ""
     if test "$USER" != "$DEFAULT_USER"
