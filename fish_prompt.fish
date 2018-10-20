@@ -20,12 +20,14 @@ function fish_prompt
     set -l normal (set_color normal)
     set -l cwd $yellow(prompt_pwd)
 
+    set -l user_prompt ""
     if test "$USER" != "$CURRENT_USER"
-        set -l user_prompt "$green$USER$normal$separator"
+        set user_prompt "$green$USER$normal$separator"
     end
 
+    set -l host_prompt ""
     if test "$SSH_CLIENT" != ""
-        set -l host_prompt "$cyan$hostname$normal$separator"
+        set host_prompt "$cyan$hostname$normal$separator"
     end
 
     set -l cwd_prompt "$cwd$normal"
