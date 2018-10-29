@@ -35,6 +35,10 @@ function fish_prompt
         set host_prompt "$cyan$hostname$normal$separator"
     end
 
+    if test "(ls -id /)" != "2"
+        set host_prompt "$cyan$hostname$normal$separator"
+    end
+
     set -l cwd_prompt "$cwd$normal"
 
     echo -n -e "$user_prompt$host_prompt$cwd_prompt$arrow$normal "
