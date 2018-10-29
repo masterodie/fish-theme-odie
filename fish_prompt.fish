@@ -35,7 +35,7 @@ function fish_prompt
         set host_prompt "$cyan$hostname$normal$separator"
     end
 
-    if test "(ls -id /)" != "2"
+    if test "(ls -id /)" = "2"
         set host_prompt "$cyan$hostname$normal$separator"
     end
 
